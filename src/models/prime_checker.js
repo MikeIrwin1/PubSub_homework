@@ -13,14 +13,16 @@ PrimeChecker.prototype.bindEvents = function () {
 };
 
 PrimeChecker.prototype.isNumberPrime = function (number) {
+  const isPrime = 'Yes! This number is prime.';
+  const isNotPrime = 'No! This number is not prime.';
   if (number <= 1) {
-    return false;
+    return isNotPrime;
   }
   for (let i = 2; i < number; i++) {
     if (number % i === 0) {
-        return false;
+        return isNotPrime;
     }
   }
-  return true;
+  return isPrime;
 };
 module.exports = PrimeChecker;
